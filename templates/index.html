@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Home-SanchoDev{% endblock %}
+
+{% block content %}
+<section class="welcome">
+    <div class="container">
+        <h1 class="welcome-text fade-element">WELCOME</h1>
+        <p class="welcome-description fade-element">
+            I'm Santiago Sánchez Márquez, a Junior Software Developer. 
+            Welcome to my portfolio! 
+        </p>
+        <p class="welcome-description fade-element">
+            I'm always looking to learn and improve, 
+            so any feedback is greatly appreciated.
+        </p>
+        <p class="welcome-description fade-element">
+            This portfolio ain't done yet, I'm still working on it.
+        </p>
+        <div class="welcome-logo fade-element">
+           <a href="https://store.steampowered.com/app/70/HalfLife/?l=spanish"><img src="{{ url_for('static', filename='images/lambda_symbol.png') }}" alt="lambda_symbol"></a>
+        </div>
+    </div>
+</section>
+
+<div class="separator"></div>
+
+<section id="about" class="about-section">
+    <div class="container">
+        <h2 class="about-title fade-element">ABOUT ME</h2>
+        <div class="about-content">
+            <div class="about-text fade-element">
+                <p>
+                    I am a Systems Engineering student in Colombia, with a strong passion for software development and a clear goal to apply my skills, 
+                    grow professionally, and contribute to innovative IT projects.
+                </p>
+                <br>
+                <p>
+                    I have experience developing dynamic web applications using Python and the Flask framework, 
+                    building and consuming RESTful APIs, optimizing database queries, and applying object-oriented programming principles. 
+                </p>
+                <br>
+                <p>
+                    I've also participated in research projects related to systems engineering, turning theory into practical solutions.
+                    I am fluent in English and Spanish, highly adaptable, and committed to professional growth through teamwork, respect, and continuous learning.
+                </p>    
+            </div>
+            <div class="about-image fade-element">
+                <img src="{{ url_for('static', filename='images/foto_ssm.jpg') }}" alt="foto_ssm">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
