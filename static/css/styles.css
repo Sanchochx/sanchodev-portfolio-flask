@@ -78,19 +78,34 @@ nav {
     justify-content: center;
 }
 
-.welcome-logo img{
+.welcome-logo img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #ffffff;
+    animation: pulse 3s ease-in-out infinite;  
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.10);
+    }
 }
 
 .separator {
-    width: 100%;
+    width: 0%; 
     height: 1px;
     background: #ffffff;
-    margin: 4rem 0;
+    margin: 4rem auto;  
+    transition: width 1s ease;
+}
+
+.separator.visible {
+    width: 100%; 
 }
 
 .about-section {
@@ -105,6 +120,25 @@ nav {
     text-align: center;
     letter-spacing: 0.3rem;
     margin-bottom: 3rem;
+    position: relative;  
+    padding-bottom: 20px;  
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);  
+    width: 100px;
+    height: 4px;
+    background: green;
+    border-radius: 2px;
+    transition: transform 0.6s ease;
+}
+
+.about-title.visible::after {
+    transform: translateX(-50%) scaleX(1);  
 }
 
 .about-content {
@@ -125,12 +159,29 @@ nav {
 }
 
 .about-image img {
-    width: 60%;
+    width: 50%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-    margin-left: 8rem;
+    margin-left: 4rem;
     display: block;
+    transition: transform 0.4s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);   
+}
+
+.coding-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 1rem;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.coding-image img:hover {
+    transform: scale(1.05);  
 }
 
 .hero {
@@ -243,6 +294,24 @@ footer p {
 .fade-element.visible {
     opacity: 1;                       
     transform: translateY(0);        
+}
+
+.fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-left.visible,
+.fade-right.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* ========== MÓVIL ========== */

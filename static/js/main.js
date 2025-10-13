@@ -22,13 +22,23 @@ function isElementInViewport(element) {
 }
 
 function checkFadeElements() {
-    const fadeElements = document.querySelectorAll('.fade-element');
+    const fadeElements = document.querySelectorAll('.fade-element, .fade-left, .fade-right');
     
     fadeElements.forEach(element => {
         if (isElementInViewport(element)) {
-            element.classList.add('visible');  
+            element.classList.add('visible');
         } else {
-            element.classList.remove('visible'); 
+            element.classList.remove('visible');
+        }
+    });
+    
+    const separators = document.querySelectorAll('.separator');
+    
+    separators.forEach(sep => {
+        if (isElementInViewport(sep)) {
+            sep.classList.add('visible');
+        } else {
+            sep.classList.remove('visible');
         }
     });
 }

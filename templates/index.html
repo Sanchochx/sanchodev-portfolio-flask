@@ -3,6 +3,7 @@
 {% block title %}Home-SanchoDev{% endblock %}
 
 {% block content %}
+
 <section class="welcome">
     <div class="container">
         <h1 class="welcome-text fade-element">WELCOME</h1>
@@ -29,7 +30,7 @@
     <div class="container">
         <h2 class="about-title fade-element">ABOUT ME</h2>
         <div class="about-content">
-            <div class="about-text fade-element">
+            <div class="about-text fade-left">
                 <p>
                     I am a Systems Engineering student in Colombia, with a strong passion for software development and a clear goal to apply my skills, 
                     grow professionally, and contribute to innovative IT projects.
@@ -45,10 +46,65 @@
                     I am fluent in English and Spanish, highly adaptable, and committed to professional growth through teamwork, respect, and continuous learning.
                 </p>    
             </div>
-            <div class="about-image fade-element">
+            <div class="about-image fade-right">
                 <img src="{{ url_for('static', filename='images/foto_ssm.jpg') }}" alt="foto_ssm">
             </div>
         </div>
+    </div>
+</section>
+
+<div class="separator"></div>
+
+<section id="why-code" class="about-section">
+    <div class="container">
+        <h2 class="about-title fade-element">WHY I CODE</h2>
+        <div class="about-content">
+            <div class="coding-image fade-left">
+                <img src="{{ url_for('static', filename='images/coding_image.jpg') }}" alt="Why I Code">
+            </div>
+            <div class="about-text fade-right">
+                <p>
+                    I've been fascinated by computers and software since I was a kid—there was something 
+                    magical about how they worked. 
+                </p>
+                <br>
+                <p>
+                    As I grew up, that fascination turned into a clear goal: 
+                    I wanted to create things that matter.
+                </p>
+                <br>
+                <p>
+                    Programming became my tool of choice because it 
+                    lets me build solutions from scratch (with just my fingers and a keyboard!) and help 
+                    people solve real problems. Whether it's a simple website or a complex application, 
+                    knowing that my code can make someone's life easier is what keeps me motivated and 
+                    constantly learning.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="separator"></div>
+
+<section class="welcome">
+    <div class="container">
+        <h1 class="about-title fade-element">MY JOURNEY AND MISSION</h1>
+        <p class="welcome-description fade-element">
+            My mission is to evolve from a Junior Developer into a Senior Software Engineer and 
+            eventually a Tech Lead, building expertise that makes a real difference. I'm committed 
+            to creating solutions that positively impact millions of people while developing the 
+            technical and leadership skills needed to build something of my own. In the long term, 
+            I envision establishing a solid career that opens doors to founding my own company, 
+            where I can combine innovation with social impact. I'm particularly passionate about 
+            mastering AI-driven software development, as I believe artificial intelligence will be 
+            the cornerstone of solving tomorrow's biggest challenges. Every project I work on is a 
+            step toward that vision—learning, growing, and preparing to make a meaningful 
+            contribution to the tech industry and society.
+        </p>
+        <p class="welcome-description fade-element">
+            -Santiago "Sancho" Sanchez Marquez
+        </p>
     </div>
 </section>
 
