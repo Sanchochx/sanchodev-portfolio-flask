@@ -11,40 +11,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-function isElementInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    
-    return (
-        rect.top <= windowHeight * 0.75 &&  
-        rect.bottom >= windowHeight * 0.25   
-    );
-}
-
-function checkFadeElements() {
-    const fadeElements = document.querySelectorAll('.fade-element, .fade-left, .fade-right');
-    
-    fadeElements.forEach(element => {
-        if (isElementInViewport(element)) {
-            element.classList.add('visible');
-        } else {
-            element.classList.remove('visible');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
         }
     });
-    
-    const separators = document.querySelectorAll('.separator');
-    
-    separators.forEach(sep => {
-        if (isElementInViewport(sep)) {
-            sep.classList.add('visible');
-        } else {
-            sep.classList.remove('visible');
-        }
-    });
-}
+}, {
+    threshold: 0.15
+});
 
-checkFadeElements();
-
-window.addEventListener('scroll', checkFadeElements);
-
-window.addEventListener('resize', checkFadeElements);
+document.querySelectorAll('.fade-element, .fade-left, .fade-right, .separator').forEach(el => {
+    observer.observe(el);
+});

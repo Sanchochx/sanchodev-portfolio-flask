@@ -43,6 +43,12 @@ nav {
     color: #2563eb;
 }
 
+.nav-menu a.active {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 .welcome {
     background: black;
     min-height: 100vh;
@@ -367,7 +373,237 @@ footer p {
     }
 
     .hero-buttons {
-        flex-direction: column; 
-        align-items: center;  
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.about-text-centered {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text-centered p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.8;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* ========== SKILLS ========== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-category-title {
+    color: #9ca3af;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid #14532d;
+    border-radius: 9999px;
+    color: #d1d5db;
+    font-size: 0.85rem;
+    font-weight: 400;
+    background: #052e16;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.skill-tag:hover {
+    border-color: #22c55e;
+    background: #14532d;
+    color: #ffffff;
+}
+
+/* ========== PROJECT CARDS ========== */
+
+.projects-hero {
+    background: black;
+    padding: 6rem 2rem 2rem;
+    text-align: center;
+}
+
+.projects-section {
+    background: black;
+    padding: 2rem 2rem 6rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: #052e16;
+    border: 1px solid #14532d;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: #22c55e;
+    background: #14532d;
+    transform: translateY(-4px);
+}
+
+.project-card-body {
+    padding: 1.75rem;
+    flex: 1;
+}
+
+.project-title {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02rem;
+}
+
+.project-description {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.project-card-footer {
+    padding: 1rem 1.75rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid #14532d;
+}
+
+.project-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: #22c55e;
+}
+
+.project-link-demo {
+    color: #10b981;
+}
+
+.project-link-demo:hover {
+    color: #34d399;
+}
+
+/* ========== CONTACT ========== */
+
+.contact-section {
+    background: black;
+    padding: 4rem 2rem 6rem;
+    text-align: center;
+}
+
+.contact-cta {
+    margin: 2.5rem auto 1.5rem;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    background: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.02rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.contact-socials a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.contact-socials a:hover {
+    color: #ffffff;
+}
+
+.contact-email {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.contact-email:hover {
+    color: #2563eb;
+}
+
+.contact-divider {
+    color: #374151;
+}
+
+/* ========== RESPONSIVE (additions) ========== */
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-hero {
+        padding: 4rem 1rem 1rem;
+    }
+
+    .projects-section {
+        padding: 1rem 1rem 4rem;
     }
 }

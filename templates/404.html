@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}404 — SanchoDev{% endblock %}
+
+{% block meta_description %}Page not found — SanchoDev{% endblock %}
+
+{% block content %}
+
+<section class="welcome">
+    <div class="container">
+        <h1 class="welcome-text fade-element">404</h1>
+        <p class="welcome-description fade-element">
+            This page doesn't exist — or it wandered off somewhere.
+        </p>
+        <div class="contact-cta fade-element">
+            <a href="{{ url_for('home') }}" class="contact-btn">Back to Home</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

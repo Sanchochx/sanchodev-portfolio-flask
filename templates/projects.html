@@ -1,14 +1,44 @@
 {% extends "base.html" %}
 
-{% block title %}Home-SanchoDev{% endblock %}
+{% block title %}Projects — SanchoDev{% endblock %}
 
 {% block content %}
 
-<section class="welcome">
-    <p class="welcome-description fade-element">
-    Soon.....
-    </p>
+<section class="projects-hero">
+    <div class="container">
+        <h1 class="about-title fade-element">PROJECTS</h1>
+        <p class="welcome-description fade-element">
+            A selection of things I've built — from web apps to AI integrations.
+        </p>
+    </div>
 </section>
 
+<div class="separator"></div>
+
+<section class="projects-section">
+    <div class="container">
+        <div class="projects-grid">
+            {% for project in projects %}
+            <div class="project-card fade-element" style="transition-delay: {{ loop.index0 * 0.15 }}s">
+                <div class="project-card-body">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-tech">
+                        {% for tag in project.tech %}
+                        <span class="skill-tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="project-card-footer">
+                    <a href="{{ project.github }}" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    {% if project.demo %}
+                    <a href="{{ project.demo }}" class="project-link project-link-demo" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 {% endblock %}
