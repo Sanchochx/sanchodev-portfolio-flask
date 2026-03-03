@@ -35,6 +35,40 @@
         <p>&copy; SanchoDev λ 2025</p>
     </footer>
 
+    <!-- CHAT WIDGET -->
+    <div id="chat-widget">
+        <button id="chat-toggle" aria-label="Open chat" aria-expanded="false">
+            <svg id="chat-icon-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <svg id="chat-icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 style="display:none;">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div id="chat-panel" aria-hidden="true">
+            <div id="chat-header">
+                <span id="chat-header-title">Chat with Santiago</span>
+                <span id="chat-header-subtitle">AI assistant · Powered by GPT-4o-mini</span>
+            </div>
+            <div id="chat-messages" role="log" aria-live="polite"></div>
+            <div id="chat-input-area">
+                <textarea id="chat-input" placeholder="Ask me anything..." rows="1" maxlength="1000" aria-label="Chat message input"></textarea>
+                <button id="chat-send" aria-label="Send message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- END CHAT WIDGET -->
+
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>

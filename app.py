@@ -1,6 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
+from chatbot import Me
 
 app = Flask(__name__)
+
+_me = None
+def get_me():
+    global _me
+    if _me is None:
+        _me = Me()
+    return _me
 
 PROJECTS = [
     {
@@ -42,6 +50,23 @@ def home():
 @app.route('/projects')
 def projects():
     return render_template('projects.html', projects=PROJECTS)
+
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    data = request.get_json()
+    if not data:
+        return jsonify({"error": "Invalid JSON"}), 400
+    message = data.get('message', '').strip()
+    history = data.get('history', [])
+    if not message:
+        return jsonify({"error": "Message is required"}), 400
+    try:
+        reply = get_me().chat(message, history)
+        return jsonify({"reply": reply})
+    except Exception as e:
+        print(f"Chat error: {e}", flush=True)
+        return jsonify({"error": "Internal server error"}), 500
 
 
 @app.errorhandler(404)
