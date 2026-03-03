@@ -5,7 +5,8 @@ import os
 import requests
 from pypdf import PdfReader
 
-load_dotenv(override=True)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(os.path.join(BASE_DIR, ".env"), override=True)
 
 def push(text):
     requests.post(
@@ -76,13 +77,13 @@ class Me:
     def __init__(self):
         self.openai = OpenAI()
         self.name = "Santiago Sanchez"
-        reader = PdfReader("me/linkedin.pdf")
+        reader = PdfReader(os.path.join(BASE_DIR, "me/linkedin.pdf"))
         self.linkedin = ""
         for page in reader.pages:
             text = page.extract_text()
             if text:
                 self.linkedin += text
-        with open("me/summary.txt", "r", encoding="utf-8") as f:
+        with open(os.path.join(BASE_DIR, "me/summary.txt"), "r", encoding="utf-8") as f:
             self.summary = f.read()
 
 
