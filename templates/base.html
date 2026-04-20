@@ -14,15 +14,25 @@
     <meta property="og:description" content="{% block og_description %}Junior Software Developer specializing in Python, Flask, and fullstack web development.{% endblock %}">
 
     <title>{% block title %}SanchoDev{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <div id="matrix-bg" aria-hidden="true"></div>
     <nav>
         <div class="nav-container">
             <ul class="nav-menu">
-                <li><a href="{{ url_for('home') }}" class="{{ 'active' if request.endpoint == 'home' }}">Home</a></li>
-                <li><a href="{{ url_for('projects') }}" class="{{ 'active' if request.endpoint == 'projects' }}">Projects</a></li>
+                <li><a href="{{ url_for('home') }}" class="{{ 'active' if request.endpoint == 'home' }}" data-i18n="nav_home">Home</a></li>
+                <li><a href="{{ url_for('projects') }}" class="{{ 'active' if request.endpoint == 'projects' }}" data-i18n="nav_projects">Projects</a></li>
             </ul>
+            <div class="lang-toggle">
+                <button class="lang-btn active" data-lang="en">ENG</button>
+                <span class="lang-sep">|</span>
+                <button class="lang-btn" data-lang="es">ESP</button>
+            </div>
         </div>
     </nav>
 
@@ -32,7 +42,7 @@
     </main>
 
     <footer>
-        <p>&copy; SanchoDev λ 2025</p>
+        <p>&copy; SanchoDev λ <span id="footer-year">2026</span></p>
     </footer>
 
     <!-- CHAT WIDGET -->
@@ -51,8 +61,9 @@
         </button>
         <div id="chat-panel" aria-hidden="true">
             <div id="chat-header">
-                <span id="chat-header-title">Chat with Santiago</span>
-                <span id="chat-header-subtitle">AI assistant · Powered by GPT-4o-mini</span>
+                <span id="chat-header-title" data-i18n="chat_header_title">Chat with Santiago</span>
+                <span id="chat-header-subtitle" data-i18n="chat_header_subtitle">AI assistant · Powered by GPT-4o-mini</span>
+                <span id="chat-header-note">You can ask in Spanish too · Puedes preguntar en español</span>
             </div>
             <div id="chat-messages" role="log" aria-live="polite"></div>
             <div id="chat-input-area">
@@ -69,6 +80,7 @@
     </div>
     <!-- END CHAT WIDGET -->
 
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>

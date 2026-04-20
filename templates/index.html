@@ -6,18 +6,10 @@
 
 <section class="welcome">
     <div class="container">
-        <h1 class="welcome-text fade-element">WELCOME</h1>
-        <p class="welcome-description fade-element">
-            I'm Santiago Sánchez Márquez, a Junior Software Developer.
-            Welcome to my portfolio!
-        </p>
-        <p class="welcome-description fade-element">
-            I'm always looking to learn and improve,
-            so any feedback is greatly appreciated.
-        </p>
-        <div class="welcome-logo fade-element">
-           <a href="https://store.steampowered.com/app/70/HalfLife/?l=spanish"><img src="{{ url_for('static', filename='images/lambda_symbol.png') }}" alt="Half-Life lambda symbol"></a>
-        </div>
+        <h1 class="welcome-text fade-element">Santiago Sánchez Márquez</h1>
+        <p class="welcome-role fade-element">Fullstack Developer</p>
+
+
     </div>
 </section>
 
@@ -25,24 +17,15 @@
 
 <section id="about" class="about-section">
     <div class="container">
-        <h2 class="about-title fade-element">ABOUT ME</h2>
+        <h2 class="about-title fade-element" data-i18n="about_title">ABOUT ME</h2>
         <div class="about-text-centered fade-element">
-            <p>
-            I am an IT Engineering student with a strong passion for software development and a clear goal: to apply my skills, grow professionally, and contribute to innovative IT projects.
-            </p>
+            <p data-i18n="about_p1">I am an IT Engineering student with a strong passion for software development and a clear goal: to apply my skills, grow professionally, and contribute to innovative IT projects.</p>
             <br>
-            <p>
-            My technical expertise includes frontend development with Angular, React, TypeScript, and responsive design using Angular Material, combined with backend development using Node.js and Express. I work with both relational and non-relational databases, implement RESTful APIs, and apply object-oriented programming principles to create robust, maintainable code.
-            </p>
+            <p data-i18n="about_p2">My technical expertise includes frontend development with Angular, React, TypeScript, and responsive design using Angular Material, combined with backend development using Node.js and Express. I work with both relational and non-relational databases, implement RESTful APIs, and apply object-oriented programming principles to create robust, maintainable code.</p>
             <br>
-            <p>
-            I'm also proficient in Python and Flask, which I leverage for personal projects and AI-driven applications. I'm actively exploring agentic AI development, using AI agents as productivity multipliers in my development workflow while maintaining architectural decision-making and code quality oversight.
-            </p>
+            <p data-i18n="about_p3">I'm also proficient in Python and Flask, which I leverage for personal projects and AI-driven applications. I'm actively exploring agentic AI development, using AI agents as productivity multipliers in my development workflow while maintaining architectural decision-making and code quality oversight.</p>
             <br>
-            <p>
-            I've participated in systems engineering research projects, transforming theoretical concepts into practical, working solutions.
-            Fluent in English and Spanish, I'm highly adaptable and committed to professional growth through teamwork, continuous learning, and delivering quality software.
-            </p>
+            <p data-i18n="about_p4">I've participated in systems engineering research projects, transforming theoretical concepts into practical, working solutions. Fluent in English and Spanish, I'm highly adaptable and committed to professional growth through teamwork, continuous learning, and delivering quality software.</p>
         </div>
     </div>
 </section>
@@ -51,41 +34,42 @@
 
 <section id="skills" class="about-section">
     <div class="container">
-        <h2 class="about-title fade-element">SKILLS &amp; TECHNOLOGIES</h2>
+        <h2 class="about-title fade-element" data-i18n="skills_title">SKILLS &amp; TECHNOLOGIES</h2>
         <div class="skills-grid">
-            <div class="skill-category fade-element">
-                <h4 class="skill-category-title">Languages</h4>
+            <div class="skill-category">
+                <h4 class="skill-category-title fade-element" data-i18n="skill_cat_languages">Languages</h4>
                 <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 0">Python</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 1">JavaScript</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 2">HTML</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 3">CSS</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 4">SQL</span>
                 </div>
             </div>
-            <div class="skill-category fade-element">
-                <h4 class="skill-category-title">Frameworks</h4>
+            <div class="skill-category">
+                <h4 class="skill-category-title fade-element" data-i18n="skill_cat_frameworks">Frameworks</h4>
                 <div class="skill-tags">
-                    <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">Angular</span>
-                    <span class="skill-tag">Jinja2</span>
-                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 0">Flask</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 1">React</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 2">Angular</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 3">Jinja2</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 4">Bootstrap</span>
                 </div>
             </div>
-            <div class="skill-category fade-element">
-                <h4 class="skill-category-title">Tools</h4>
+            <div class="skill-category">
+                <h4 class="skill-category-title fade-element" data-i18n="skill_cat_tools">Tools</h4>
                 <div class="skill-tags">
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">GitHub</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 0">Git</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 1">GitHub</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 2">VS Code</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 3">REST APIs</span>
                 </div>
             </div>
-            <div class="skill-category fade-element">
-                <h4 class="skill-category-title">Databases</h4>
+            <div class="skill-category">
+                <h4 class="skill-category-title fade-element" data-i18n="skill_cat_databases">Databases</h4>
                 <div class="skill-tags">
-                    <span class="skill-tag">SQLite</span>
-                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 0">SQLite</span>
+                    <span class="skill-tag fade-element" style="--tag-index: 1">PostgreSQL</span>
                 </div>
             </div>
         </div>
@@ -96,54 +80,12 @@
 
 <section id="why-code" class="about-section">
     <div class="container">
-        <h2 class="about-title fade-element">WHY I CODE</h2>
-        <div class="about-content">
-            <div class="coding-image fade-left">
-                <img src="{{ url_for('static', filename='images/coding_image.jpg') }}" alt="Person coding at a computer">
-            </div>
-            <div class="about-text fade-right">
-                <p>
-                    I've been fascinated by computers and software since I was a kid—there was something
-                    magical about how they worked.
-                </p>
-                <br>
-                <p>
-                    As I grew up, that fascination turned into a clear goal:
-                    I wanted to create things that matter.
-                </p>
-                <br>
-                <p>
-                    Programming became my tool of choice because it
-                    lets me build solutions from scratch (with just my fingers and a keyboard!) and help
-                    people solve real problems. Whether it's a simple website or a complex application,
-                    knowing that my code can make someone's life easier is what keeps me motivated and
-                    constantly learning.
-                </p>
-            </div>
+        <h2 class="about-title fade-element" data-i18n="why_code_title">WHY I CODE</h2>
+        <div class="why-code-text fade-element">
+            <p data-i18n="why_code_p1">I've been fascinated by computers and software since I was a kid — there was something magical about how they worked.</p>
+            <p data-i18n="why_code_p2">As I grew up, that fascination turned into a clear goal: I wanted to create things that matter.</p>
+            <p data-i18n="why_code_p3">Programming became my tool of choice because it lets me build solutions from scratch and help people solve real problems. Whether it's a simple website or a complex application, knowing that my code can make someone's life easier is what keeps me motivated and constantly learning.</p>
         </div>
-    </div>
-</section>
-
-<div class="separator"></div>
-
-<section class="welcome">
-    <div class="container">
-        <h1 class="about-title fade-element">MY JOURNEY AND MISSION</h1>
-        <p class="welcome-description fade-element">
-            My mission is to evolve from a Junior Developer into a Senior Software Engineer and
-            eventually a Tech Lead, building expertise that makes a real difference. I'm committed
-            to creating solutions that positively impact millions of people while developing the
-            technical and leadership skills needed to build something of my own. In the long term,
-            I envision establishing a solid career that opens doors to founding my own company,
-            where I can combine innovation with social impact. I'm particularly passionate about
-            mastering AI-driven software development, as I believe artificial intelligence will be
-            the cornerstone of solving tomorrow's biggest challenges. Every project I work on is a
-            step toward that vision—learning, growing, and preparing to make a meaningful
-            contribution to the tech industry and society.
-        </p>
-        <p class="welcome-description fade-element">
-            -Santiago Sanchez Marquez
-        </p>
     </div>
 </section>
 
@@ -151,18 +93,13 @@
 
 <section id="contact" class="contact-section">
     <div class="container">
-        <h2 class="about-title fade-element">GET IN TOUCH</h2>
-        <p class="welcome-description fade-element">
-            I'm open to new opportunities, collaborations, or just a good conversation about tech.
-        </p>
+        <h2 class="about-title fade-element" data-i18n="contact_title">GET IN TOUCH</h2>
         <div class="contact-socials fade-element">
-            <a href="mailto:santiagosanchezmarquez@gmail.com" class="contact-email">santiagosanchezmarquez@gmail.com</a>
+            <a href="mailto:santiagosanchezmarquez@gmail.com" class="contact-link">santiagosanchezmarquez@gmail.com</a>
             <span class="contact-divider">·</span>
-            <a href="https://github.com/Sanchochx" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://github.com/Sanchochx" class="contact-link" target="_blank" rel="noopener noreferrer">GitHub</a>
             <span class="contact-divider">·</span>
-            <a href="https://www.linkedin.com/in/santiago-sánchez-márquez-821b742b1/?trk=opento_sprofile_details" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <span class="contact-divider">·</span>
-            <a href="https://www.instagram.com/sanchx_s" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/in/santiago-sánchez-márquez-821b742b1/?trk=opento_sprofile_details" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
     </div>
 </section>

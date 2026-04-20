@@ -5,9 +5,25 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: black;
     line-height: 1.6;
+}
+
+#matrix-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.18;
+    pointer-events: none;
+    background: url('../images/matrix_bg.gif') center / cover;
+    mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #matrix-bg {
+        display: none;
+    }
 }
 
 nav {
@@ -22,6 +38,37 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2.5rem;
+}
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    padding: 0.2rem 0.35rem;
+    transition: color 0.2s ease;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    color: #22c55e;
+}
+
+.lang-sep {
+    color: #374151;
+    font-size: 0.78rem;
+    user-select: none;
 }
 
 .nav-menu{
@@ -40,7 +87,7 @@ nav {
 }
 
 .nav-menu a:hover{
-    color: #2563eb;
+    color: #22c55e;
 }
 
 .nav-menu a.active {
@@ -50,7 +97,7 @@ nav {
 }
 
 .welcome {
-    background: black;
+    background: radial-gradient(ellipse at center, rgba(5, 46, 22, 0.30) 0%, transparent 70%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -58,11 +105,11 @@ nav {
 }
 
 .welcome-text{
-    font-size: 6rem;
+    font-size: 3rem;
     font-weight: 900;
-    color: #ffffff;  
+    color: #ffffff;
     text-align: center;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.2rem;
     line-height: 1.2;
 }
 
@@ -76,6 +123,24 @@ nav {
     font-weight: 300;
     letter-spacing: 0.05rem;
     opacity: 0.9;
+}
+
+.welcome-role {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #22c55e;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    margin-top: 0.75rem;
+}
+
+.welcome-tagline {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #9ca3af;
+    text-align: center;
+    letter-spacing: 0.05rem;
+    margin-top: 0.5rem;
 }
 
 .welcome-logo {
@@ -115,7 +180,7 @@ nav {
 }
 
 .about-section {
-    background: black;
+    background: transparent;
     padding: 4rem 2rem;
 }
 
@@ -177,17 +242,22 @@ nav {
     transform: scale(1.05);   
 }
 
-.coding-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-left: 1rem;
-    display: block;
-    transition: transform 0.4s ease;
+.why-code-text {
+    max-width: 700px;
+    margin: 0 auto;
+    border-left: 3px solid #22c55e;
+    padding-left: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.coding-image img:hover {
-    transform: scale(1.05);  
+.why-code-text p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.8;
+    font-weight: 300;
+    opacity: 0.9;
 }
 
 .hero {
@@ -209,7 +279,7 @@ nav {
 
 .hero .subtitle {
     font-size: 1.5rem;     
-    color: #2563eb;         
+    color: #22c55e;         
     margin-bottom: 1rem;   
 }
 
@@ -230,7 +300,7 @@ nav {
 .btn {
     display: inline-block;  
     padding: 0.875rem 2rem; 
-    background: #2563eb;  
+    background: #22c55e;  
     color: white;           
     text-decoration: none; 
     border-radius: 8px;     
@@ -239,32 +309,33 @@ nav {
 }
 
 .btn:hover {
-    background: #1e40af;  
-    transform: translateY(-2px); 
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    background: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
 }
 
 .btn-outline {
     background: transparent;
-    color: #2563eb;       
-    border: 2px solid #2563eb; 
+    color: #22c55e;       
+    border: 2px solid #22c55e; 
 }
 
 .btn-outline:hover {
-    background: #2563eb;   
+    background: #22c55e;   
     color: white;        
 }
 
 footer {
-    background: black;   
-    color: white;        
-    text-align: center;    
-    padding: 2rem;        
-    margin-top: 4rem;     
+    background: black;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #14532d;
 }
 
 footer p {
-    margin-bottom: 1.5rem;
+    color: #6b7280;
+    font-size: 0.85rem;
+    letter-spacing: 0.05rem;
 }
 
 .social-links {
@@ -291,27 +362,29 @@ footer p {
 }
 
 .fade-element {
-    opacity: 0;                          
-    transform: translateY(30px);         
-    transition: opacity 0.8s ease,       
-                transform 0.8s ease;     
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-element.visible {
-    opacity: 1;                       
-    transform: translateY(0);        
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .fade-left {
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-right {
     opacity: 0;
     transform: translateX(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-left.visible,
@@ -325,15 +398,19 @@ footer p {
 @media (max-width: 768px) {
 
     .welcome-text {
-        font-size: 3rem;
-        letter-spacing: 0.2rem;
+        font-size: 1.6rem;
+        letter-spacing: 0.05rem;
         padding: 0 1rem;
     }
 
-    .welcome-description {
-        font-size: 1rem;
+    .welcome-role {
+        font-size: 1.25rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .welcome-tagline {
+        font-size: 0.9rem;
         padding: 0 1rem;
-        margin-top: 1.5rem;
     }
 
     .welcome-logo img {
@@ -428,6 +505,15 @@ footer p {
     transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
+.skill-tag.fade-element {
+    transition:
+        border-color 0.2s ease 0s,
+        color 0.2s ease 0s,
+        background 0.2s ease 0s,
+        opacity 0.5s ease calc(var(--tag-index, 0) * 0.05s),
+        transform 0.5s ease calc(var(--tag-index, 0) * 0.05s);
+}
+
 .skill-tag:hover {
     border-color: #22c55e;
     background: #14532d;
@@ -437,13 +523,13 @@ footer p {
 /* ========== PROJECT CARDS ========== */
 
 .projects-hero {
-    background: black;
+    background: transparent;
     padding: 6rem 2rem 2rem;
     text-align: center;
 }
 
 .projects-section {
-    background: black;
+    background: transparent;
     padding: 2rem 2rem 6rem;
 }
 
@@ -466,7 +552,6 @@ footer p {
 
 .project-card:hover {
     border-color: #22c55e;
-    background: #14532d;
     transform: translateY(-4px);
 }
 
@@ -487,7 +572,29 @@ footer p {
     color: #9ca3af;
     font-size: 0.95rem;
     line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #1f2937;
     margin-bottom: 1.25rem;
+}
+
+.project-meta-item {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #6b7280;
+}
+
+.project-meta-label {
+    color: #22c55e;
+    font-style: italic;
+    font-weight: 500;
+    margin-right: 0.35rem;
 }
 
 .project-tech {
@@ -526,7 +633,7 @@ footer p {
 /* ========== CONTACT ========== */
 
 .contact-section {
-    background: black;
+    background: transparent;
     padding: 4rem 2rem 6rem;
     text-align: center;
 }
@@ -538,7 +645,7 @@ footer p {
 .contact-btn {
     display: inline-block;
     padding: 0.9rem 2.5rem;
-    background: #2563eb;
+    background: #22c55e;
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
@@ -549,7 +656,7 @@ footer p {
 }
 
 .contact-btn:hover {
-    background: #1d4ed8;
+    background: #16a34a;
     transform: translateY(-2px);
 }
 
@@ -561,26 +668,15 @@ footer p {
     flex-wrap: wrap;
 }
 
-.contact-socials a {
-    color: #9ca3af;
+.contact-link {
+    color: #22c55e;
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.2s ease;
 }
 
-.contact-socials a:hover {
+.contact-link:hover {
     color: #ffffff;
-}
-
-.contact-email {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
-}
-
-.contact-email:hover {
-    color: #2563eb;
 }
 
 .contact-divider {
@@ -693,6 +789,13 @@ footer p {
     font-size: 0.75rem;
 }
 
+#chat-header-note {
+    color: #4b5563;
+    font-size: 0.68rem;
+    font-style: italic;
+    margin-top: 0.1rem;
+}
+
 #chat-messages {
     flex: 1;
     overflow-y: auto;
@@ -749,6 +852,33 @@ footer p {
     color: #fca5a5;
     align-self: flex-start;
     border-bottom-left-radius: 3px;
+}
+
+.chat-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0.25rem 0 0.5rem;
+    align-self: flex-start;
+    max-width: 95%;
+}
+
+.chat-suggestion {
+    background: #052e16;
+    border: 1px solid #14532d;
+    color: #9ca3af;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    font-family: inherit;
+}
+
+.chat-suggestion:hover {
+    border-color: #22c55e;
+    color: #ffffff;
+    background: #14532d;
 }
 
 /* Typing indicator */
@@ -857,5 +987,77 @@ footer p {
     #chat-panel {
         width: calc(100vw - 2rem);
         height: 420px;
+    }
+}
+
+/* ========== TABLET (769px - 1024px) ========== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .welcome-text {
+        font-size: 2.25rem;
+        letter-spacing: 0.15rem;
+    }
+
+    .welcome-role {
+        font-size: 1.5rem;
+    }
+
+    .welcome-logo img {
+        width: 175px;
+        height: 175px;
+    }
+
+    .about-title {
+        font-size: 3.5rem;
+    }
+
+    .about-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .skills-grid {
+        max-width: 100%;
+        gap: 2rem;
+    }
+
+    .projects-grid {
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+}
+
+/* ========== LARGE SCREEN (1440px+) ========== */
+
+@media (min-width: 1440px) {
+    .welcome-text {
+        font-size: 3.5rem;
+    }
+
+    .welcome-role {
+        font-size: 2rem;
+    }
+
+    .welcome-logo img {
+        width: 225px;
+        height: 225px;
+    }
+
+    .about-title {
+        font-size: 4.5rem;
+    }
+
+    .about-section {
+        padding: 6rem 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1200px;
+        gap: 3rem;
+    }
+
+    .projects-grid {
+        max-width: 1200px;
+        gap: 2.5rem;
     }
 }
